@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="/static/css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="body">
+    <div class="fluid" style="min-height: 95%;">
+        <div class="topbar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <P class="pull-left hidden-xs"><i class="fa fa-clock-o"></i>
+                        <span>Mon - Sat 8.00 - 18.00. Sunday CLOSED</span></p>
+                        <p class="pull-right">
+                            <i class="fa fa-phone"></i>
+                            Tel No. (+91) 98675 41500
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- start header -->
+        <header>
+            <div class=" navbar-default navbar-static-top">
+                <div class="container">
+                    <!--<div class="navbar-header hidden-xs">
+                        <a class="navbar-brand" href="{% url 'home'%}">आई श्री प्रतिष्टान</a>
+                    </div>-->
+                    <div class="topnav" id="myTopnav">
+                        <a href="{% url 'home'%}" class="navbar-header" ><h1>आई श्री प्रतिष्टान</h1></a>
+                        <a href="{% url 'aboutus'%}">About us</a>
+                        <a href="{% url 'contactus'%}">Contact us</a>
+                        <a href="{% url 'ourprojects'%}">Our projects</a>
+                        <a href="#about">Future projects</a>
+                        <a href="#about">members</a>
+                        <a href="#about"><i class="fa fa-fw fa-envelope"></i>Mail us</a>
+                        <a href="{% url 'gallery'%}">Gallery</a>
+                        <a href="#about">Balance Sheet</a>
+                        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        {% block content %}
+        {% endblock %}
+    </div>
+    <footer>
+        <div class="container-fluid" align="center">
+            <p>copy right@ आई श्री प्रतिष्टान  Developed by Suraj Valanju </p>
+        </div>
+    </footer>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+        {% block Script %}
+        {% endblock %}
+    </script>
+</body>
+</html>

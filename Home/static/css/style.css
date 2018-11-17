@@ -1,0 +1,361 @@
+html,
+body
+{
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 100%;
+}
+
+.topbar
+{
+    background-color: #002e5b;
+    font-size: 11px;
+    color: white;
+}
+
+topbar p
+{
+    font-size: 11px;
+    color: #f1f6ff;
+}
+
+p
+{
+    margin-top: 10px !important;
+    margin-bottom: 10px;
+}
+
+.topbar p > i
+{
+    color: #fdd428;
+}
+
+.topbar .container .row
+{
+    margin: 0;
+    padding: 0;
+}
+
+    .topbar .container .row .col-md-12
+    {
+        padding: 0px;
+    }
+
+/*navigation bar css*/
+.navbar-default
+{
+    box-shadow: 1px 1px 1px rgba(156, 156, 156, 0.36);
+}
+
+.topnav
+{
+    overflow: hidden;
+}
+
+    .topnav a
+    {
+        float: left;
+        display: block;
+        color: rgb(97, 124, 150);
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+        .topnav a:hover
+        {
+            color: #002e5b;
+        }
+
+.active
+{
+    background-color: #4CAF50;
+    color: white;
+}
+
+.topnav .icon
+{
+    display: none;
+}
+
+/*crausal css*/
+.carousel-inner img
+{
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (max-width: 600px)
+{
+    .topnav a:not(:first-child)
+    {
+        display: none;
+    }
+
+    .topnav a.icon
+    {
+        float: right;
+        display: block;
+    }
+}
+
+@media screen and (max-width: 600px)
+{
+    .topnav.responsive
+    {
+        position: relative;
+    }
+
+        .topnav.responsive .icon
+        {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        .topnav.responsive a
+        {
+            float: none;
+            display: block;
+            text-align: left;
+        }
+
+    .hidden-xs
+    {
+        display: none !important;
+    }
+
+    .slideImage
+    {
+        height: 320px;
+    }
+
+    .arrow
+    {
+        /*width: 50px;
+        height: 50px;
+        position: absolute;
+        top: 29%;
+        left: 44.3%;
+        /*background: url(img/arrow.jpg) no-repeat;
+        overflow: hidden;
+        animation: godown 2s infinite ease-in-out;*/
+        display: none;
+    }
+}
+
+
+@media (min-width: 1200px)
+{
+    .container
+    {
+        max-width: 1400px !important;
+    }
+
+    .topnav a:nth-child(2)
+    {
+        margin-left: 5%;
+    }
+
+    .slideImage
+    {
+        height: 550px;
+    }
+
+    .topnav a:not(:first-child)
+    {
+        padding-top: 30px;
+    }
+
+    .arrow
+    {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        top: 83%;
+        left: 48.3%;
+        /*background: url(img/arrow.jpg) no-repeat;*/
+        overflow: hidden;
+        animation: godown 2s infinite ease-in-out;
+    }
+}
+
+.highlite
+{
+    font-size: 20px;
+    -webkit-animation-name: highlite;
+    -webkit-animation-duration: 0.5s;
+    -webkit-transform-origin: 50% 50%;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: linear;
+}
+
+    .highlite:hover
+    {
+        font-size: 20px;
+        -webkit-animation-name: highlite;
+        -webkit-animation-duration: 0.8s;
+        -webkit-transform-origin: 50% 50%;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: linear;
+    }
+
+@keyframes highlite
+{
+    0%
+    {
+        -webkit-transform: translate(2px, 1px) rotate(0deg);
+    }
+
+    10%
+    {
+        -webkit-transform: translate(-1px, -2px) rotate(-1deg);
+    }
+
+    20%
+    {
+        -webkit-transform: translate(-3px, 0px) rotate(1deg);
+    }
+
+    30%
+    {
+        -webkit-transform: translate(0px, 2px) rotate(0deg);
+    }
+
+    40%
+    {
+        -webkit-transform: translate(1px, -1px) rotate(1deg);
+    }
+
+    50%
+    {
+        -webkit-transform: translate(-1px, 2px) rotate(-1deg);
+    }
+
+    60%
+    {
+        -webkit-transform: translate(-3px, 1px) rotate(0deg);
+    }
+
+    70%
+    {
+        -webkit-transform: translate(2px, 1px) rotate(-1deg);
+    }
+
+    80%
+    {
+        -webkit-transform: translate(-1px, -1px) rotate(1deg);
+    }
+
+    90%
+    {
+        -webkit-transform: translate(2px, 2px) rotate(0deg);
+    }
+
+    100%
+    {
+        -webkit-transform: translate(1px, -2px) rotate(-1deg);
+    }
+}
+
+.slideImage
+{
+    opacity: 1;
+    animation: slideImage 1s 1 ease-in-out;
+}
+
+@keyframes slideImage
+{
+    0%
+    {
+        transform: translateX(500px);
+        opacity: 0;
+    }
+}
+
+@media (min-width: 576px)
+{
+    .jumbotron
+    {
+        padding: 1rem 2rem;
+    }
+}
+
+
+
+@keyframes godown
+{
+    from
+    {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    to
+    {
+        opacity: 1;
+    }
+}
+
+.blink
+{
+    animation: blink 2s 1 ease-in-out;
+    cursor: pointer;
+}
+
+@keyframes blink
+{
+    from
+    {
+        opacity: 0;
+    }
+
+    to
+    {
+        opacity: 1;
+    }
+}
+
+.blink:hover
+{
+    animation: blink 0.8s infinite ease-in-out;
+}
+
+/*Collapsibles css*/
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+.active, .collapsible:hover {
+  background-color: #555;
+}
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+}
+/*end Collapsibles*/
+/*galleryImage css*/
+
+.galleryImage:hover
+{
+    transform: scale3d(1.1, 1.1, 1.1);
+    transition:all 0.8s ease-in-out;
+    box-shadow: 10px 10px 60px 10px rgba(0,0,0,0.3);
+    z-index:100;
+    overflow:hidden;
+    /*display:flexbox;*/
+    position:relative;
+
+}
+/*end galleryImage*/

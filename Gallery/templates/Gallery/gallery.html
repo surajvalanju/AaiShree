@@ -1,0 +1,56 @@
+{% extends "home/header.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="container">
+    <div class="jumbotron"><a name="top"></a>
+        <!--<h1>this is gallery page</h1>
+        <img src="{% static 'img/Aai.jpg' %}" class="img2" alt="banner" width="500px" height="300" width="600">
+        {% if all_images %}
+            <h1>This is new code</h1>
+            <ul>
+                {% for image in all_images %}
+                <li><a href="/Gallery/{{image.id }}"> {{image.DisplayName}} </a></li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <h1>You Dont have any images </h1>
+        {% endif %}
+        -->
+        {% for OurProjects in all_OurProjects %}
+            <button class="collapsible">{{OurProjects.name}}</button>
+            <div class="content">
+                <div class="jumbotron" style="margin:15px">
+                    <p>{{OurProjects.about}}</p>
+                </div>
+                <div >
+                    {% for OurProjectImages in all_OurProjectImages %}
+                        <p>{{OurProjectImages.ourProject}} == {{OurProjects.name}}</p>
+                            <div class="col-md-4" style="padding:15px;float:left;position:relative;">
+                                <img src="{{ OurProjectImages.ImageUrl.url }}" class="galleryImage" width="370" height="270">
+                            </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+{% block Script %}
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.maxHeight){
+          content.style.maxHeight = null;
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+        }
+      });
+    }
+{% endblock %}
+
+
